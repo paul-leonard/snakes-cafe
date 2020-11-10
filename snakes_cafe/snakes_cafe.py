@@ -35,8 +35,8 @@ Unicorn Tears
 
 order = {}
 
-# future stretch task: use this tuple to check and see if item is on menu
-# menu_items = ("Wings", Cookies, Spring Rolls, Salmon, Steak, Meat Tornado, A Literal Garden, Ice Cream, Cake, Pie, Coffee, Tea, Unicorn Tears)
+#use this tuple to check and see if item is on menu
+menu_items = ("Wings", "Cookies", "Spring Rolls", "Salmon", "Steak", "Meat Tornado", "A Literal Garden", "Ice Cream", "Cake", "Pie", "Coffee", "Tea", "Unicorn Tears")
 
 
 while True:
@@ -46,6 +46,11 @@ while True:
   #quit if done
   if current_order == "quit":
     break
+
+  #these three lines restrict ordering to menu items. Comment them out for open kitchen.
+  if current_order not in menu_items:
+    print(f"\nSorry, we do not serve {current_order} here.\n")
+    continue
 
   #record this order item
   if current_order in order:
