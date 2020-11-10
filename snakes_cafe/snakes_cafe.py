@@ -54,13 +54,15 @@ while True:
     order[current_order] = 1
 
   #read back this order
-  print(f"you want {current_order}")
+  if order[current_order] > 1:
+    print(f"\n** {order[current_order]} orders of {current_order} have been added to your meal **\n")
+  else:
+    print(f"\n** {order[current_order]} order of {current_order} have been added to your meal **\n")
 
   #summary of full order
-  print("")
   print("""  ***********************************
   **        Your Full Order        **
   ***********************************""")
   for item in order:
-    print(f"Qty {order[item]} of {item}")
+    print(f"      Qty {order[item]} of {item}")
   print("")
